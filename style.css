@@ -79,6 +79,16 @@ header {
     margin-bottom: 32px;
 }
 
+/* Estilo para foto de perfil (se decidir usar) */
+.profile-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold-accent);
+    margin-bottom: 16px;
+}
+
 .profile-name {
     font-size: 1.8rem;
     font-weight: 700;
@@ -126,7 +136,7 @@ header {
 .btn-text {
     flex-grow: 1;
     text-align: center;
-    margin-left: 10px;
+    margin: 0 10px; /* Alinhamento centralizado perfeito */
 }
 
 .dots-icon {
