@@ -1,51 +1,186 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    height: 100vh;
+/* ==========================================================================
+   PALETA DE CORES DE LUXO (Vinho / Borgonha / Marsala)
+   ========================================================================== */
+:root {
+    --bg-main: #0d0608;          /* Fundo escuro profundo com sutil tom de vinho */
+    --card-bg: #1a0b10;          /* Fundo do cartão em Borgonha bem escuro */
+    --primary-burgundy: #58111a;  /* Vinho/Borgonha principal */
+    --marsala-accent: #800020;   /* Marsala vívido para destaques e hovers */
+    --gold-accent: #d4af37;      /* Dourado champanhe para detalhes luxuosos */
+    --text-primary: #f5f0f2;     /* Off-white suave para o texto principal */
+    --text-secondary: #b3a2a8;   /* Tom neutro rosado/acinzentado para subtextos */
+    --border-color: rgba(212, 175, 55, 0.2); /* Borda dourada translúcida */
+}
+
+/* Reset básico e tipografia */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estrutura do Container */
+.main-container {
+    width: 100%;
+    max-width: 580px;
+}
+
+.profile-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 32px 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Botões de Ação do Topo */
+.top-action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container {
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    padding: 20px;
+.action-btn:hover {
+    background: var(--marsala-accent);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.4);
+}
+
+/* Cabeçalho do Perfil */
+header {
     text-align: center;
-    width: 400px;
-    max-width: 80%;
+    margin-bottom: 32px;
 }
 
-.profile {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #7000ac;
+.profile-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
 }
 
-.sub-title {
-    margin-bottom: 50px;
+.profile-bio {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
-.link {
+/* Lista de Links */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+/* Botões Principais (Estilo Vazado e Sofisticado) */
+.link-btn.vazado {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 20px 0;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background-color: rgba(88, 17, 26, 0.2); /* Fundo sutil em Borgonha */
+    border: 1px solid var(--primary-burgundy);
+    border-radius: 14px;
+    color: var(--text-primary);
     text-decoration: none;
-    background-color: #121212;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.link p {
+.link-btn.vazado:hover {
+    background-color: var(--marsala-accent);
+    border-color: var(--gold-accent);
     color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(88, 17, 26, 0.5);
 }
 
-.link:hover {
-    background-color: #7000ac;
-    transition: 0.3s;
+.btn-text {
+    flex-grow: 1;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.dots-icon {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.link-btn.vazado:hover .dots-icon {
+    color: var(--gold-accent);
+}
+
+/* Rodapé */
+.card-footer {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-btn {
+    display: inline-block;
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-btn:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Sub-rodapé */
+.sub-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.sub-footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: color 0.2s ease;
+}
+
+.sub-footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.bullet {
+    color: var(--primary-burgundy);
+    font-size: 0.75rem;
 }
