@@ -3,36 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Gabriel</title>
+    <title>Cartão de Links</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones via FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <main class="profile-card">
+        <div class="top-bar">
+            <button class="icon-circle-btn" aria-label="Menu"><i class="fa-solid fa-asterisk"></i></button>
+            <button class="icon-circle-btn" aria-label="Compartilhar"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+        </div>
+
         <header class="profile-header">
             <div class="avatar-container">
-                <img src="foto-de-perfil.jpg" alt="Foto de Perfil" class="profile-avatar">
+                <img src="foto-de-perfil.jpg" alt="Logo do Perfil" class="profile-avatar">
             </div>
+            <p class="profile-bio">Culinária chinesa e japonesa. Self service, a lá Carte e Delivery</p>
         </header>
 
         <nav class="links-container">
             <a href="https://wa.me/seunumero" target="_blank" rel="noopener noreferrer" class="link-btn">
-                <i class="fa-brands fa-whatsapp btn-icon"></i>
-                <span>WhatsApp</span>
+                <i class="fa-brands fa-whatsapp btn-icon-left"></i>
+                <span class="btn-text">WhatsApp</span>
+                <i class="fa-solid fa-ellipsis-vertical btn-icon-right"></i>
             </a>
-            
+
             <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="link-btn">
-                <i class="fa-solid fa-location-dot btn-icon"></i>
-                <span>Localização</span>
+                <i class="fa-solid fa-location-dot btn-icon-left"></i>
+                <span class="btn-text">Localização</span>
+                <i class="fa-solid fa-ellipsis-vertical btn-icon-right"></i>
             </a>
 
             <a href="https://facebook.com/seu_usuario" target="_blank" rel="noopener noreferrer" class="link-btn">
-                <i class="fa-brands fa-facebook-f btn-icon"></i>
-                <span>Facebook</span>
+                <i class="fa-brands fa-facebook-f btn-icon-left"></i>
+                <span class="btn-text">Facebook</span>
+                <i class="fa-solid fa-ellipsis-vertical btn-icon-right"></i>
             </a>
         </nav>
+
+        <footer class="profile-footer">
+            <div class="footer-links">
+                <a href="#">Cookie Preferences</a> · 
+                <a href="#">Report</a> · 
+                <a href="#">Privacy</a> · 
+                <a href="#">Explore</a> · 
+                <a href="#">About this account</a> · 
+                <a href="#">More from Linktree</a>
+            </div>
+
+            <div class="badge-container">
+                <div class="linktree-badge">
+                    <span>linktr.ee/you</span>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <p class="join-text">Junte-se hoje no Linktree</p>
+            </div>
+        </footer>
     </main>
 
 </body>
