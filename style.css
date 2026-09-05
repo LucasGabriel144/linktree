@@ -1,82 +1,176 @@
-/* ==========================================================================
-   PALETA DE CORES (Vinho & Borgonha)
-   ========================================================================== */
-:root {
-    --bg-main: #0d0608;          /* Fundo da tela */
-    --card-bg: #1a0b10;          /* Fundo do cartão */
-    --primary-burgundy: #58111a;  /* Borda do botão */
-    --marsala-accent: #800020;   /* Destaque ao passar o mouse */
-    --gold-accent: #d4af37;      /* Borda ao passar o mouse */
-    --text-primary: #f5f0f2;     /* Texto principal */
-    --text-secondary: #b3a2a8;   /* Texto secundário (Bio) */
-}
-
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #3b0304;
     min-height: 100vh;
-    display: grid;
-    place-items: center;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
-/* Cartão do Perfil */
 .profile-card {
+    /* Fundo com degradê vermelho escuro similar ao da imagem */
+    background: linear-gradient(180deg, #b00702 0%, #a20000 60%, #4a0002 100%);
     width: 100%;
-    max-width: 400px;
-    background-color: var(--card-bg);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 20px;
-    padding: 32px 20px;
-    text-align: center;
+    max-width: 480px;
+    min-height: 100vh;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Topo (Nome e Bio) */
-header {
+/* Barra Superior */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.icon-circle-btn {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Cabeçalho */
+.profile-header {
+    text-align: center;
     margin-bottom: 24px;
 }
 
-.profile-name {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 6px;
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .profile-bio {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-/* Lista de Botões */
+/* Botões de Link */
 .links-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+    width: 100%;
 }
 
-/* Estilo do Botão */
 .link-btn {
-    display: block;
-    padding: 14px 16px;
-    background-color: rgba(88, 17, 26, 0.25);
-    border: 1px solid var(--primary-burgundy);
-    border-radius: 12px;
-    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #8c0000;
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    padding: 14px 20px;
     text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .link-btn:hover {
-    background-color: var(--marsala-accent);
-    border-color: var(--gold-accent);
-    transform: translateY(-2px);
+    background-color: #700000;
+    transform: scale(1.01);
+}
+
+.btn-icon-left {
+    font-size: 1.3rem;
+    width: 24px;
+    text-align: center;
+}
+
+.btn-text {
+    font-size: 1rem;
+    font-weight: 600;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.btn-icon-right {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    width: 24px;
+    text-align: right;
+}
+
+/* Rodapé */
+.profile-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 10px;
+}
+
+.footer-links {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.linktree-badge {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.join-text {
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
