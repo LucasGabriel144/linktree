@@ -1,21 +1,18 @@
 /* ==========================================================================
-   PALETA DE CORES DE LUXO (Vinho / Borgonha / Marsala) - CSS PURO
+   PALETA DE CORES (Vinho & Borgonha)
    ========================================================================== */
 :root {
-    --bg-main: #0d0608;          /* Fundo escuro profundo */
-    --card-bg: #1a0b10;          /* Fundo do cartão em Borgonha */
-    --primary-burgundy: #58111a;  /* Borgonha principal */
-    --marsala-accent: #800020;   /* Marsala para destaques */
-    --gold-accent: #d4af37;      /* Dourado champanhe */
-    --text-primary: #f5f0f2;     /* Off-white para o texto */
-    --text-secondary: #b3a2a8;   /* Neutro rosado para subtextos */
-    --border-color: rgba(212, 175, 55, 0.2);
-    
-    color-scheme: dark;
+    --bg-main: #0d0608;          /* Fundo da tela */
+    --card-bg: #1a0b10;          /* Fundo do cartão */
+    --primary-burgundy: #58111a;  /* Borda do botão */
+    --marsala-accent: #800020;   /* Destaque ao passar o mouse */
+    --gold-accent: #d4af37;      /* Borda ao passar o mouse */
+    --text-primary: #f5f0f2;     /* Texto principal */
+    --text-secondary: #b3a2a8;   /* Texto secundário (Bio) */
 }
 
-/* Reset nativo leve */
-*, *::before, *::after {
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,151 +21,62 @@
 body {
     background-color: var(--bg-main);
     color: var(--text-primary);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: system-ui, -apple-system, sans-serif;
     min-height: 100vh;
     display: grid;
     place-items: center;
     padding: 20px;
 }
 
-/* Estrutura Principal */
-.main-container {
-    width: 100%;
-    max-width: 580px;
-}
-
+/* Cartão do Perfil */
 .profile-card {
+    width: 100%;
+    max-width: 400px;
     background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
-    padding: 32px 24px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px;
+    padding: 32px 20px;
+    text-align: center;
 }
 
-/* Botões de Ação do Topo */
-.top-action-buttons {
-    display: flex;
-    justify-content: space-between;
+/* Topo (Nome e Bio) */
+header {
     margin-bottom: 24px;
 }
 
-.action-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.action-btn:hover {
-    background: var(--marsala-accent);
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-/* Cabeçalho do Perfil */
-header {
-    text-align: center;
-    margin-bottom: 32px;
-}
-
 .profile-name {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
+    margin-bottom: 6px;
 }
 
 .profile-bio {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-/* Lista de Links */
+/* Lista de Botões */
 .links-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: 12px;
 }
 
-/* Estilo dos Botões de Links (ex: TikTok) */
+/* Estilo do Botão */
 .link-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 16px 20px;
-    background-color: rgba(88, 17, 26, 0.2);
+    display: block;
+    padding: 14px 16px;
+    background-color: rgba(88, 17, 26, 0.25);
     border: 1px solid var(--primary-burgundy);
-    border-radius: 14px;
+    border-radius: 12px;
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
 }
 
 .link-btn:hover {
     background-color: var(--marsala-accent);
     border-color: var(--gold-accent);
-    color: #ffffff;
     transform: translateY(-2px);
-}
-
-.link-btn svg {
-    flex-shrink: 0;
-}
-
-/* Rodapé */
-.card-footer {
-    text-align: center;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.footer-btn {
-    display: inline-block;
-    color: var(--gold-accent);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-    transition: color 0.2s ease;
-}
-
-.footer-btn:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-/* Sub-rodapé */
-.sub-footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-}
-
-.sub-footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.75rem;
-    transition: color 0.2s ease;
-}
-
-.sub-footer-links a:hover {
-    color: var(--text-primary);
-}
-
-.bullet {
-    color: var(--primary-burgundy);
-    font-size: 0.75rem;
 }
