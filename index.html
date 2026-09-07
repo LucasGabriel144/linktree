@@ -3,51 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links - Lucas Gabriel</title>
-    <!-- Adicione seus links de CSS e FontAwesome aqui no <head> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Linktree - Profissional</title>
+
+    <!-- Fonte Inter (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Seu arquivo de estilo CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="card-container">
-        <!-- Lista de Links -->
-        <main class="links-container">
-            <!-- Link do GitHub -->
-            <a href="https://github.com/LucasGabriel144" class="link-btn vazado" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
-                <span class="btn-text">GitHub</span>
-                <i class="fas fa-ellipsis-v dots-icon"></i>
-            </a>
-
-            <!-- Link do Instagram (Lembre-se de substituir 'SEU_USUARIO' pelo seu nome de usuário real) -->
-            <a href="https://instagram.com/SEU_USUARIO" class="link-btn vazado" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-instagram"></i>
-                <span class="btn-text">Instagram</span>
-                <i class="fas fa-ellipsis-v dots-icon"></i>
-            </a>
-
-            <!-- Insira novos links aqui seguindo o mesmo padrão -->
-        </main>
-
-        <!-- Rodapé -->
-        <footer class="card-footer">
-            <a href="#" class="footer-btn">Junte-se a Lucas Gabriel no Linktree</a>
+    <!-- Fundo externo -->
+    <div class="page-wrapper">
+        
+        <!-- Cartão Central -->
+        <div class="card">
             
-            <nav class="sub-footer-links">
-                <a href="#">Cookie Preferences</a>
-                <span class="bullet">•</span>
-                <a href="#">Report</a>
-                <span class="bullet">•</span>
-                <a href="#">Privacy</a>
-                <span class="bullet">•</span>
-                <a href="#">Explore</a>
-                <span class="bullet">•</span>
-                <a href="#">About this account</a>
-                <span class="bullet">•</span>
-                <a href="#">More from Linktree</a>
-            </nav>
-        </footer>
+            <!-- Ações do Topo (Ícone de Estrela/Acessibilidade e Compartilhar) -->
+            <div class="top-actions">
+                <button class="icon-btn" aria-label="Acessibilidade"><i class="fas fa-asterisk"></i></button>
+                <button class="icon-btn" aria-label="Compartilhar"><i class="fas fa-arrow-up-from-bracket"></i></button>
+            </div>
+
+            <!-- Cabeçalho (Foto de Perfil e Informações) -->
+            <header class="profile-header">
+                <div class="profile-avatar">
+                    <!-- Substitua 'sua-foto.jpg' pela sua imagem de perfil ou logo -->
+                    <img src="https://via.placeholder.com/150" alt="Foto de Perfil">
+                </div>
+                
+                <!-- Seu Nome / Nome de Usuário Profissional -->
+                <h1 class="profile-handle">@seu.nome.profissional</h1>
+                
+                <!-- Sua Bio / Breve descrição profissional -->
+                <p class="profile-bio">
+                    Desenvolvimento Web & Soluções Digitais. Especialista em criação de sites e manutenção técnica.
+                </p>
+            </header>
+
+            <!-- Lista de Links Principais -->
+            <main class="links-container">
+                
+                <!-- Botão 1: WhatsApp -->
+                <a href="https://wa.me/5500000000000" class="link-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp btn-icon"></i>
+                    <span class="btn-text">Enviar Mensagem</span>
+                    <i class="fas fa-ellipsis-v dots-icon"></i>
+                </a>
+
+                <!-- Botão 2: Portfólio / Projetos -->
+                <a href="https://github.com/LucasGabriel144" class="link-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github btn-icon"></i>
+                    <span class="btn-text">Ver Portfólio / GitHub</span>
+                    <i class="fas fa-ellipsis-v dots-icon"></i>
+                </a>
+
+                <!-- Botão 3: Website Profissional -->
+                <a href="https://seu-site.com" class="link-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-globe btn-icon"></i>
+                    <span class="btn-text">Acessar Meu Site</span>
+                    <i class="fas fa-ellipsis-v dots-icon"></i>
+                </a>
+
+            </main>
+
+            <!-- Rodapé interno -->
+            <footer class="card-footer">
+                <a href="https://wa.me/5500000000000" class="cta-btn" target="_blank">Entre em Contato</a>
+
+                <nav class="sub-footer-links">
+                    <a href="#">Cookies</a>
+                    <span class="bullet">•</span>
+                    <a href="#">Privacidade</a>
+                    <span class="bullet">•</span>
+                    <a href="#">Termos</a>
+                    <span class="bullet">•</span>
+                    <a href="#">Sobre</a>
+                </nav>
+            </footer>
+
+        </div>
     </div>
 
 </body>
