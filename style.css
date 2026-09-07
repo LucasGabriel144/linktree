@@ -1,176 +1,217 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
-    background-color: #3b0304;
-    min-height: 100vh;
+    background-color: #4a0d13; /* Fundo externo tom vinho escuro */
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    min-height: 100vh;
+    padding: 20px 0;
 }
 
-.profile-card {
-    /* Fundo com degradê vermelho escuro similar ao da imagem */
-    background: linear-gradient(180deg, #b00702 0%, #a20000 60%, #4a0002 100%);
+/* ==========================================================================
+   CARTÃO CENTRAL
+   ========================================================================== */
+.page-wrapper {
     width: 100%;
     max-width: 480px;
-    min-height: 100vh;
-    padding: 24px 20px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #bd140e; /* Vermelho principal do cartão */
+    width: 100%;
+    border-radius: 32px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    position: relative;
 }
 
-/* Barra Superior */
-.top-bar {
+/* ==========================================================================
+   BOTÕES DO TOPO (Ações Rápidas)
+   ========================================================================== */
+.top-actions {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
-.icon-circle-btn {
-    background-color: rgba(255, 255, 255, 0.7);
+.icon-btn {
+    background: rgba(255, 255, 255, 0.2);
     border: none;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    color: #ffffff;
+    font-size: 16px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: #000;
-    font-size: 1.1rem;
+    justify-content: center;
     cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
 }
 
-/* Cabeçalho */
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   CABEÇALHO / PERFIL
+   ========================================================================== */
 .profile-header {
     text-align: center;
-    margin-bottom: 24px;
-}
-
-.avatar-container {
+    margin-bottom: 28px;
     display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profile-avatar {
-    width: 100px;
-    height: 100px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
+    overflow: hidden;
+    background-color: #ffffff;
+    margin-bottom: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border: 3px solid #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.profile-handle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
 }
 
 .profile-bio {
-    color: #ffffff;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.875rem;
     line-height: 1.4;
-    max-width: 90%;
-    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 340px;
+    font-weight: 400;
 }
 
-/* Botões de Link */
+/* ==========================================================================
+   CONTAINER DE LINKS (Botões Vazados)
+   ========================================================================== */
 .links-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 100%;
+    margin-bottom: 32px;
 }
 
 .link-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #8c0000;
+    width: 100%;
+    padding: 16px 20px;
+    border: 1.5px solid rgba(255, 255, 255, 0.8); /* Borda fina estilizada */
+    border-radius: 50px; /* Formato pílula */
+    background: transparent;
     color: #ffffff;
-    border: 1.5px solid rgba(255, 255, 255, 0.7);
-    border-radius: 50px;
-    padding: 14px 20px;
     text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
 }
 
 .link-btn:hover {
-    background-color: #700000;
-    transform: scale(1.01);
+    background-color: #ffffff;
+    color: #bd140e;
+    border-color: #ffffff;
+    transform: translateY(-2px);
 }
 
-.btn-icon-left {
-    font-size: 1.3rem;
+.btn-icon {
+    font-size: 1.2rem;
     width: 24px;
     text-align: center;
 }
 
 .btn-text {
-    font-size: 1rem;
-    font-weight: 600;
     flex-grow: 1;
     text-align: center;
 }
 
-.btn-icon-right {
-    font-size: 0.9rem;
+.dots-icon {
+    font-size: 0.85rem;
     opacity: 0.7;
-    width: 24px;
-    text-align: right;
 }
 
-/* Rodapé */
-.profile-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding-bottom: 10px;
-}
-
-.footer-links {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.75rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
-}
-
-.footer-links a {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-.badge-container {
+/* ==========================================================================
+   RODAPÉ DO CARTÃO
+   ========================================================================== */
+.card-footer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 20px;
 }
 
-.linktree-badge {
+.cta-btn {
     background-color: #ffffff;
-    color: #000000;
-    padding: 10px 20px;
-    border-radius: 30px;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.85rem;
+    color: #111111;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 50px;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.join-text {
+.cta-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+}
+
+.sub-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.sub-footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sub-footer-links a:hover {
     color: #ffffff;
-    font-size: 0.8rem;
-    font-weight: 500;
+    text-decoration: underline;
+}
+
+.bullet {
+    font-size: 0.5rem;
+    opacity: 0.5;
 }
