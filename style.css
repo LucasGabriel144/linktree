@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #2b2528; /* Fundo escuro com tom ligeiramente acastanhado/roxo */
+  background-color: #2b2528;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@ body {
 
 /* Contentor do Cartão Central */
 .card-container {
-  background-color: #3b3035; /* Cor do cartão ligeiramente mais clara que o fundo */
+  background-color: #3b3035;
   width: 100%;
   max-width: 480px;
   border-radius: 28px;
@@ -25,7 +25,7 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
 }
 
 /* Cabeçalho com botões no topo */
@@ -58,9 +58,25 @@ body {
   height: 18px;
 }
 
-/* Nome e Subtítulo */
+/* Foto de Perfil e Informações */
 .profile-section {
   text-align: center;
+}
+
+.avatar-container {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .profile-title {
@@ -72,6 +88,40 @@ body {
 .profile-subtitle {
   font-size: 0.95rem;
   color: #d1c7cc;
+}
+
+/* Container de Links Principais */
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link-item {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.link-item:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.link-item svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Rodapé do Cartão */
